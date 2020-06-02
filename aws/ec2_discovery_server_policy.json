@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadFromSongsQueue",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueUrl"
+      ],
+      "Resource": "arn:aws:sqs:us-east-1:115403529078:published_resultado_votacao_queue"
+    },
+    {
+      "Sid": "UploadDocumentsToCloudsearch",
+      "Effect": "Allow",
+      "Action": [
+        "cloudsearch:document",
+        "cloudsearch:DescribeDomains"
+      ],
+      "Resource": "arn:aws:cloudsearch:us-east-1:115403529078:domain/published-resultado-votacao"
+    }
+  ]
+}
